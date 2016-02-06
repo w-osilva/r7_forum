@@ -47,3 +47,4 @@ end
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 gem 'mongoid-autoinc', '~> 5.0'
+gem 'will_paginate_mongoid'

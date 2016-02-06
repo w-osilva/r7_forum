@@ -1,3 +1,4 @@
+require 'autoinc'
 class Comment
   include Mongoid::Document
   include Mongoid::Timestamps

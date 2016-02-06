@@ -1,10 +1,11 @@
+require 'will_paginate_mongoid'
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.all
+    @topics = Topic.order_by(:number => 'asc').paginate(:page => params[:page], :per_page => 5)
   end
 
   # GET /topics/1

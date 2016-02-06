@@ -1,3 +1,4 @@
+require 'autoinc'
 class Topic
   include Mongoid::Document
   include Mongoid::Timestamps
