@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Topics</h1>
+<%= link_to 'New Topic', new_topic_path %>
+
+<ul style="list-style-type:none">
+  <% @topics.each do |topic| %>
+      <li>
+        <strong><%= topic.number %>.</strong>
+        <a href="/topics/<%= topic.id %>"><%= topic.created_at %></a> <%= topic.text %>
+      </li>
+  <% end %>
+</ul>

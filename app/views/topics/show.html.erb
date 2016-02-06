@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @topic.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
+
+<ul style="list-style-type:none">
+  <li>
+    <strong><%= @topic.number %>.</strong>
+    <%= @topic.created_at %> <%= @topic.text %>
+    <a href="/topics/<%= @topic.id %>/comments/new">[Reply]</a>
+
+    <% unless @topic.comments.empty? %>
+        <%= raw show_nested_comments(@topic.number, @topic.comments) %>
+    <% end %>
+  </li>
+</ul>
+
+<%= link_to 'Back', topics_path %>

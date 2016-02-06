@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  resources :posts
-  get 'posts/:topic_id/comment' => 'posts#new'
+  resources :comments
+  resources :topics do
+    resources :comments do
+      resources :comments
+    end
+  end
 end
