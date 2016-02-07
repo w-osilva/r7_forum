@@ -5,7 +5,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.json
   def index
-    @topics = Topic.order_by(:number => 'asc').paginate(:page => params[:page], :per_page => 5)
+    @topics = Topic.order_by(:number => 'asc').paginate(:page => params[:page], :per_page => Topic::PER_PAGE)
   end
 
   # GET /topics/1
@@ -67,13 +67,19 @@ class TopicsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_topic
-      @topic = Topic.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_topic
+    @topic = Topic.find(params[:id])
+    set_comments
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def topic_params
-      params.require(:topic).permit(:text)
-    end
+  def set_comments
+    @topic.comments = @topic.comments.where(comment: nil, topic: @topic.id)
+    @comments = @topic.comments.paginate(:page => params[:page], :per_page => Comment::PER_PAGE)
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def topic_params
+    params.require(:topic).permit(:text)
+  end
 end

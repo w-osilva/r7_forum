@@ -19,10 +19,12 @@
     <%= @topic.created_at %> <%= @topic.text %>
     <a href="/topics/<%= @topic.id %>/comments/new">[Reply]</a>
 
-    <% unless @topic.comments.empty? %>
-        <%= raw show_nested_comments(@topic.number, @topic.comments) %>
+    <% if @comments %>
+        <%= raw show_nested_comments(@topic.number, @comments) %>
     <% end %>
   </li>
 </ul>
-
+<% if @comments %>
+    <%= will_paginate @comments %>
+<% end %>
 <%= link_to 'Back', topics_path %>
