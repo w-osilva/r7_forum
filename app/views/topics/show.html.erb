@@ -16,11 +16,11 @@
 <ul style="list-style-type:none">
   <li>
     <strong><%= @topic.number %>.</strong>
-    <%= @topic.created_at %> <%= @topic.text %>
+    <%= @topic.created_at %> <%= Blacklist.sanitize @topic.text %>
     <a href="/topics/<%= @topic.id %>/comments/new">[Reply]</a>
 
     <% if @comments %>
-        <%= raw show_nested_comments(@topic.number, @comments) %>
+        <%= raw get_html_nested_comments(@topic.number, @comments) %>
     <% end %>
   </li>
 </ul>

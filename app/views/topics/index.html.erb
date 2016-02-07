@@ -7,7 +7,7 @@
   <% @topics.each do |topic| %>
       <li>
         <strong><%= topic.number %>.</strong>
-        <a href="/topics/<%= topic.id %>"><%= topic.created_at %></a> <%= topic.text %>
+        <a href="/topics/<%= topic.id %>"><%= topic.created_at %></a> <%= Blacklist.sanitize topic.text %>
       </li>
   <% end %>
 </ul>
