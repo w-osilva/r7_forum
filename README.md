@@ -25,12 +25,13 @@ Para a avaliação não levaremos em conta qualidades estéticas nem usabilidade
 
 ___
 
-## Requisitos Funcionais
+## Dependências
 
 * Ruby ~> 2.2.2
 * MongoDB ~> 2.6.10
 * gem 'mongoid', '~> 5.0.0'
 * gem 'mondoid-autoinc', '~> 5.0'
+* gem 'simple_blacklist'
 ___
 
 
