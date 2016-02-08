@@ -18,7 +18,7 @@ class Comment
 
   before_destroy :check_for_children
 
-  PER_PAGE = 2
+  PER_PAGE = 5
 
   def is_first_level?
     self.comment.nil?

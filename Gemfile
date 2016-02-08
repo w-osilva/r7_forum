@@ -34,6 +34,12 @@ gem 'unicorn'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
+  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-collection_matchers'
+  gem 'factory_girl_rails', :require => false
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'parallel_tests'
 end
 
 group :development do
