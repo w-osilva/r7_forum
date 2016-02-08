@@ -27,20 +27,6 @@ module R7Forum
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
 
-    config.autoload_paths << File.expand_path('../app/blacklist', __dir__)
   end
 end
-
-Dir[File.join(File.expand_path('../app/blacklist', __dir__), "**/*.rb")].each {|file| load file }
-Blacklist.set_blacklist_file(File.join(Rails.root, "config", "blacklist.yml"))
-Blacklist.set_letters_variations({
-  'a' => ['@', '4', 'ª'],
-  'e' => ['3', '&'],
-  'i' => ['|', '1'],
-  'o' => ['0', 'º'],
-  's' => ['$', '5'],
-  't' => ['7'],
-  'g' => ['6'],
-  'b' => ['6', '8']
-})
 

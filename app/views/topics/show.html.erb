@@ -16,7 +16,7 @@
 <ul style="list-style-type:none">
   <li>
     <strong><%= @topic.number %>.</strong>
-    <%= @topic.created_at %> <%= Blacklist.sanitize @topic.text %>
+    <%= @topic.created_at %> <%= SimpleBlacklist.sanitize @topic.text %>
     <a href="/topics/<%= @topic.id %>/comments/new">[Reply]</a>
 
     <% if @comments %>

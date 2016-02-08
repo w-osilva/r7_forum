@@ -6,7 +6,7 @@ module TopicsHelper
       index = (c.is_first_level?) ? get_index_by_page + (i + 1) : (i + 1)
       index = "#{topic_number}.#{index}"
       html +="  <li><strong>#{index}</strong>
-                  #{c.created_at} #{Blacklist.sanitize c.text}
+                  #{c.created_at} #{SimpleBlacklist.sanitize c.text}
                   <a href='/topics/#{c.get_topic.id}/comments/#{c.id}/comments/new'>[Reply]</a>"
       html +=" #{get_html_nested_comments("#{index}", c.comments)}" unless c.comments.empty?
       html +="</li>"
