@@ -1,6 +1,8 @@
-<p id="notice"><%= notice %></p>
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Destroy', @topic, method: :delete, data: { confirm: 'Are you sure?' } %>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-circle-arrow-left"></i> Back'), topics_path, class: "btn btn-default" %>
+  <%= link_to raw('<i class="glyphicon glyphicon-pencil"></i> Edit'), edit_topic_path(@topic), class: "btn btn-default" %>
+  <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> Destroy'), @topic, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+</div>
 
 <% if @topic.errors.any? %>
     <div id="error_explanation">
@@ -13,18 +15,22 @@
     </div>
 <% end %>
 
-<ul style="list-style-type:none">
-  <li>
-    <strong><%= @topic.number %>.</strong>
-    <%= @topic.created_at %> <%= SimpleBlacklist.sanitize @topic.text %>
-    <a href="/topics/<%= @topic.id %>/comments/new">[Reply]</a>
+<div class="row-fluid">
+  <ul class="list-unstyled">
+    <li>
+      <strong><%= @topic.number %>.</strong>
+      <%= @topic.created_at %> <%= SimpleBlacklist.sanitize @topic.text %>
+      <a href="/topics/<%= @topic.id %>/comments/new" class="btn btn-default btn-xs">Reply</a>
 
-    <% if @comments %>
-        <%= raw get_html_nested_comments(@topic.number, @comments) %>
-    <% end %>
-  </li>
-</ul>
+      <% if @comments %>
+          <%= raw get_html_nested_comments(@topic.number, @comments) %>
+      <% end %>
+    </li>
+  </ul>
+</div>
+
 <% if @comments %>
-    <%= will_paginate @comments %>
+    <div class="row-fluid">
+      <%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+    </div>
 <% end %>
-<%= link_to 'Back', topics_path %>

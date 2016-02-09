@@ -1,8 +1,9 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-plus"></i> New Comment'), new_comment_path, class: "btn btn-default" %>
+</div>
 
 <h1>Listing Comments</h1>
-
-<table>
+<table class="table table-bordered table-striped table-hover">
   <thead>
     <tr>
       <th>Text</th>
@@ -26,6 +27,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Comment', new_comment_path %>

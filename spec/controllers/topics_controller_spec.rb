@@ -24,12 +24,12 @@ RSpec.describe TopicsController, type: :controller do
 
       it "include @topic in @topics" do
         request_to_index
-        expect(assigns(:topics)).to include @topic
+        expect(assigns(:topics_old)).to include @topic
       end
 
       it "have at most #{Topic::PER_PAGE} @topics (because pagination)" do
         request_to_index
-        expect(assigns(:topics)).to have_at_most(Topic::PER_PAGE).items
+        expect(assigns(:topics_old)).to have_at_most(Topic::PER_PAGE).items
       end
     end
   end

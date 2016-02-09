@@ -7,7 +7,7 @@ module TopicsHelper
       index = "#{topic_number}.#{index}"
       html +="  <li><strong>#{index}</strong>
                   #{c.created_at} #{SimpleBlacklist.sanitize c.text}
-                  <a href='/topics/#{c.get_topic.id}/comments/#{c.id}/comments/new'>[Reply]</a>"
+                  <a href='/topics/#{c.get_topic.id}/comments/#{c.id}/comments/new' class='btn btn-default btn-xs'>Reply</a>"
       html +=" #{get_html_nested_comments("#{index}", c.comments)}" unless c.comments.empty?
       html +="</li>"
     end

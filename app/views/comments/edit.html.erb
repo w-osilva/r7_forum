@@ -1,6 +1,8 @@
-<h1>Editing Comment</h1>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-circle-arrow-left"></i> Back'), comments_path, class: "btn btn-default" %>
+  <%= link_to raw('<i class="glyphicon glyphicon-eye-open"></i> Show'), @comment, class: "btn btn-default" %>
+</div>
 
+<h1>Editing Comment</h1>
 <%= render 'form' %>
 
-<%= link_to 'Show', @comment %> |
-<%= link_to 'Back', comments_path %>

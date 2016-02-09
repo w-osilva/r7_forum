@@ -1,15 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-plus"></i> New Topic'), new_topic_path, class: "btn btn-default" %>
+</div>
 
 <h1>Listing Topics</h1>
-<%= link_to 'New Topic', new_topic_path %>
+<div class="row-fluid">
+    <ul class="list-unstyled">
+      <% @topics.each do |topic| %>
+          <li style="margin: 3px 0 3px 0">
+            <strong><%= topic.number %>.</strong>
+            <a href="/topics/<%= topic.id %>"><%= topic.created_at %></a> <%= SimpleBlacklist.sanitize topic.text %>
+          </li>
+      <% end %>
+    </ul>
+</div>
 
-<ul style="list-style-type:none">
-  <% @topics.each do |topic| %>
-      <li>
-        <strong><%= topic.number %>.</strong>
-        <a href="/topics/<%= topic.id %>"><%= topic.created_at %></a> <%= SimpleBlacklist.sanitize topic.text %>
-      </li>
-  <% end %>
-</ul>
+<div class="row-fluid">
+  <%= will_paginate @topics, renderer: BootstrapPagination::Rails %>
+</div>
 
-<%= will_paginate @topics %>

@@ -1,4 +1,19 @@
-<p id="notice"><%= notice %></p>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-circle-arrow-left"></i> Back'), comments_path, class: "btn btn-default" %>
+  <%= link_to raw('<i class="glyphicon glyphicon-pencil"></i> Edit'), edit_comment_path(@comment), class: "btn btn-default" %>
+  <%= link_to raw('<i class="glyphicon glyphicon-trash"></i> Destroy'), @comment, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-default" %>
+</div>
+
+<% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+      <ul>
+        <% @comment.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>
 
 <p>
   <strong>Text:</strong>
@@ -15,5 +30,3 @@
   <%= @comment.comment_id %>
 </p>
 
-<%= link_to 'Edit', edit_comment_path(@comment) %> |
-<%= link_to 'Back', comments_path %>

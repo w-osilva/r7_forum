@@ -54,6 +54,8 @@ gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 gem 'mongoid-autoinc', '~> 5.0'
 gem 'will_paginate_mongoid'
+gem 'will_paginate-bootstrap'
+gem 'twitter-bootstrap-rails'
 
 # gem developed to complement this project https://github.com/w-osilva/simple_blacklist
 gem 'simple_blacklist'

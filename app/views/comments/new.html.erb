@@ -1,5 +1,7 @@
-<h1>New Comment</h1>
+<div class="row-fluid">
+  <%= link_to raw('<i class="glyphicon glyphicon-circle-arrow-left"></i> Back'), @comment.get_topic, class: "btn btn-default" %>
+</div>
 
+<h1>New Comment</h1>
 <%= render 'form' %>
 
-<%= link_to 'Back', comments_path %>
