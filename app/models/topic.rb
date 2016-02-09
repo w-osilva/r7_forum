@@ -16,6 +16,7 @@ class Topic
 
   PER_PAGE = 5
 
+  private
   def check_for_children
     unless self.comments.nil? || self.comments.empty?
       self.errors[:base] << "Cannot delete topic while its children exists."
