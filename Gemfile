@@ -52,6 +52,10 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_12factor'
+end
+
 gem 'mongoid', '~> 5.0.0'
 gem 'bson_ext'
 gem 'mongoid-autoinc', '~> 5.0'
@@ -62,5 +66,4 @@ gem 'twitter-bootstrap-rails'
 # gem developed to complement this project https://github.com/w-osilva/simple_blacklist
 gem 'simple_blacklist'
 gem 'mysql2', '~> 0.3.19'
-
 gem 'rack-timeout'

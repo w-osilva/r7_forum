@@ -15,7 +15,15 @@ test:
   password: root
 
 production:
-  adapter: postgresql
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
   database: r7_forum_production
-  pool: 5
-  timeout: 5000
+  username: root
+  password: root
+
+#production:
+#  adapter: postgresql
+#  database: r7_forum_production
+#  pool: 5
+#  timeout: 5000

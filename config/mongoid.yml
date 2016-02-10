@@ -138,9 +138,7 @@ test:
 production:
   clients:
     default:
-      database: r7_forum_prod
-      hosts:
-        - localhost:27017
+      uri: mongodb://production:prod12@ds061385.mongolab.com:61385/heroku_s63khbbz
       options:
         read:
           mode: :primary
