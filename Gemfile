@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
@@ -26,7 +27,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
-gem 'unicorn'
+#gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -60,3 +61,4 @@ gem 'twitter-bootstrap-rails'
 # gem developed to complement this project https://github.com/w-osilva/simple_blacklist
 gem 'simple_blacklist'
 gem 'mysql2', '~> 0.3.19'
+gem 'puma'
