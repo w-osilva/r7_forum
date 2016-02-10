@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.4'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# Use postgresql as the database for Active Record
+#gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -59,3 +59,4 @@ gem 'twitter-bootstrap-rails'
 
 # gem developed to complement this project https://github.com/w-osilva/simple_blacklist
 gem 'simple_blacklist'
+gem 'mysql2', '~> 0.3.19'
