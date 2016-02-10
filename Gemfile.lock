@@ -107,6 +107,7 @@ GEM
     parallel (1.6.1)
     parallel_tests (2.3.1)
       parallel
+    pg (0.18.4)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -224,6 +225,7 @@ DEPENDENCIES
   mongoid-autoinc (~> 5.0)
   mysql2 (~> 0.3.19)
   parallel_tests
+  pg
   rails (= 4.2.4)
   rspec-collection_matchers
   rspec-rails (~> 3.0)
