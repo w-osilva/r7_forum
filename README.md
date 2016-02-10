@@ -1,6 +1,32 @@
 # R7 Forum
 ___
 
+## Dependências
+
+* Ruby ~> 2.2.2
+* MongoDB ~> 2.6.10
+* gem 'mongoid', '~> 5.0.0'
+* gem 'mondoid-autoinc', '~> 5.0'
+* gem 'simple_blacklist'
+___
+
+## Instalação
+
+### MongoDB (Ubuntu)
+
+    $ sudo apt-get install mongodb
+
+### Aplicação
+
+Após realizar o clone do projeto, basta atualizar as dependências e subir o web server:
+
+    $ bundle update
+
+    $ rails s
+
+O teste ficará disponivel em http://localhost:3000
+___
+
 ## O desafio
 
 Seu objetivo nesse teste é construir um protótipo simplificado de um fórum de discussão web. A discussão se dá em threads (tópicos), que são comentários encadeados no estilo árvore. A interface web deve contemplar:
@@ -22,17 +48,3 @@ Você pode usar tecnologias — linguagens, frameworks, servidores web, bancos d
 * A blacklist deve ser criada manualmente e em Ruby, sem usar ferramentas, frameworks ou gems;
 
 Para a avaliação não levaremos em conta qualidades estéticas nem usabilidade das páginas. Levaremos em conta a qualidade do código e a performance do sistema, sob carga e volume de dados elevados.
-
-___
-
-## Dependências
-
-* Ruby ~> 2.2.2
-* MongoDB ~> 2.6.10
-* gem 'mongoid', '~> 5.0.0'
-* gem 'mondoid-autoinc', '~> 5.0'
-* gem 'simple_blacklist'
-___
-
-
-
